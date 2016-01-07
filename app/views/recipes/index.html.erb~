@@ -1,0 +1,13 @@
+<h1>RecipesController#index</h1>
+<table>
+	<th>image</th>
+	<th>title</th>
+	<th>rank</th>
+	<% @recipes.each do |recipe| %>
+		<tr>
+			<td><%=link_to image_tag(recipe["image_url"], size: "100"), recipe["source_url"]%></td>
+			<td><%=sanitize link_to (sanitize recipe["title"]), recipe["source_url"]%></td>
+			<td><%= recipe["social_rank"]%></td>
+		</tr>
+<%end%>
+</table>
